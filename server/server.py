@@ -4,9 +4,15 @@ Created on Sun Jun  6 13:13:19 2021
 
 @author: Lenovo
 """
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import util
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
+
+@app.route('/')
+def home():
+   return render_template('index.html')
 
 @app.route("/locations")
 def get_location_names():
@@ -17,7 +23,7 @@ def get_location_names():
     
     return response
 
-@app.route('/predict', methods=['POST'])
+@app.route("/predict", methods=['POST'])
 def predict_home_price():
     total_sqft = float(request.form['total_sqft'])
     location = request.form['location']
@@ -29,6 +35,7 @@ def predict_home_price():
         })
     
     response.headers.add('Access-Control-Allow-Origin','*')
+    #response.headers.add('Content-Type','application/json')
     
     return response
 
