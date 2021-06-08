@@ -32,9 +32,9 @@ function onClickedEstimatePrice(){
     const estPrice = document.getElementById("uiEstimatedPrice");
     // console.log("bhk",bhk);
     // console.log("bath",bathrooms);
-    // const url = "http://127.0.0.1:5000/predict";
+    const url = "http://127.0.0.1:5000/predict";
 
-    const url = "/api/predict"
+    // const url = "/api/predict"
 
     $.post(url,{
         total_sqft: parseFloat(sqft.value),
@@ -51,8 +51,8 @@ function onClickedEstimatePrice(){
 
 function onPageLoad(){
     console.log("loaded document")
-    // const url = "http://127.0.0.1:5000/locations";
-    const url = "/api/locations"
+    const url = "http://127.0.0.1:5000/locations";
+    // const url = "/api/locations"
     $.get(url, function(data, status){
         console.log("got locations");
         if(data){
