@@ -12,7 +12,7 @@ This is a data science project in which I have built a model for real estate pri
 6. Python flask for http server
 7. HTML/CSS/Javascript for UI
 
-## Deployed to to cloud (AWS EC2)
+## Deployed to cloud (AWS EC2)
 
 I have deployed this machine learning model to production on amazon aws ec2 instance. I have used nginx web server that will server http requests. For AWS EC2, I used ubuntu server on which the web application and flask server were deployed. Using nginx reverse proxy /api requests will be routed to python flask server running on same machine.
 This is the link for my aws ec2 instance: http://ec2-18-117-121-94.us-east-2.compute.amazonaws.com/
